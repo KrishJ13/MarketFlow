@@ -1,0 +1,36 @@
+# Separate project/network/volumes: none of the old brokers or files are reset.
+name: marketflow-v0-simple
+services:
+  kafka:
+    image: apache/kafka@sha256:77e3df9054047a88b520d0cc46e16696d3b22022e1d580aeccd2632df6532837
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    healthcheck:
+      test: [CMD, /opt/kafka/bin/kafka-broker-api-versions.sh, --bootstrap-server, localhost:9092]
+      interval: 5s
+      timeout: 10s
+      retries: 12
+  tools:
+    build: .
+    environment:
+      SPARK_SUBMIT_OPTS: -Divy.home=/opt/ivy
+    volumes:
+      - .:/workspace:ro
+      - ./data:/workspace/data
+      - spark-jars:/opt/ivy
+    depends_on:
+      kafka:
+        condition: service_healthy
+volumes:
+  kafka-data:
+  spark-jars:

@@ -1,0 +1,5 @@
+[
+  {"event_id": "fake-1", "product_id": "BTC-USD", "price": "60000.00", "size": "0.01", "event_time": "2026-10-15T12:00:05Z"},
+  {"event_id": "fake-2", "product_id": "BTC-USD", "price": "60001.00", "size": "0.02", "event_time": "2026-10-15T12:00:35Z"},
+  {"event_id": "fake-3", "product_id": "ETH-USD", "price": "2000.00", "size": "0.10", "event_time": "2026-10-15T12:01:05Z"}
+]
