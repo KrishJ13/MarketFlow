@@ -1,0 +1,13 @@
+data/
+__pycache__/
+.pytest_cache/
+.venv/
+
+CHAT_HANDOVER.md
+CODEX_WORKFLOW.md
+CURRENT_STATE.md
+LEARNING_LOG.md
+METRICS.md
+PROJECT_SPEC.md
+TEACHING_STYLE.md
+VERSION_PLAN.md

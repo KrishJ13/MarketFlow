@@ -1,7 +1,7 @@
-# MarketFlowV0 — understand one complete pipeline
+# MarketFlow — understand one complete pipeline
 
 This is the new, minimal learning baseline. Everything needed to run it is in
-this folder; it does not use the parent project's code or services.
+this repository root; no parent project is needed.
 All three input trades are **synthetic**, not live market observations.
 
 ```text
@@ -24,9 +24,10 @@ and Make. You do not need an AWS account, host Python/Java or Airflow.
 
 ## Run each step yourself
 
-Run from this folder (`cd MarketFlowV0` if you are in the old repository root):
+Run from the repository root:
 
 ```sh
+cd /Users/krish/Projects/MarketFlow
 make build       # install the three Python packages in the tools image
 make up          # start this project's Kafka broker
 make produce     # send the three fixture trades
@@ -123,7 +124,7 @@ archived previous project, not this baseline's current data.
 ## Previous project archive
 
 The old project files were removed after an independent build/test from a
-temporary copy outside this repository. At the user's request, the parent `.git/`
+temporary copy outside this repository. At the user's request, the root `.git/`
 now starts a fresh local history with a single V0 baseline commit. No remote
 history was changed or pushed.
 `data/legacy-backup-20261015/old-project.tar.gz` contains the old source, authentic

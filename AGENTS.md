@@ -1,7 +1,7 @@
-# MarketFlowV0 — learning instructions
+# MarketFlow — simplified V0 learning instructions
 
-This directory is a standalone project. Run its own commands here; do not import
-code, data or configuration from the parent repository. No nested Git repo needed.
+This repository root is the standalone learning project. Its contents were moved
+from MarketFlowV0/ at the user's request. Run commands from this directory.
 
 PROJECT_SPEC.md is the unchanged eventual destination. TEACHING_STYLE.md is the
 unchanged original teaching reference. The explicit user direction below takes
@@ -16,8 +16,8 @@ This section governs how to apply the broader rules above. The learner reports
 that much of V1 was too complex to understand. Prior completed tests do not mean
 the learner understands the code. Optimise for a small program they can explain.
 
-- The active starting point is now `MarketFlowV0/`, a standalone learning project
-  inside this repository. The user authorises building its whole V0 at once.
+- The active starting point is the simplified V0 in this repository root
+  (formerly `MarketFlowV0/`). The user authorises building its whole V0 at once.
   Stop after V0 for review; later versions still progress in order towards V2.
   Pause the old project's V2.1 work. Preserve old files/evidence until deletion
   is separately requested; do not assume this request authorises deletion now.
